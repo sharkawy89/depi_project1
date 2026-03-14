@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T5 Store</title>
+    <link rel="stylesheet" href="assets/css/login-signup.css" />
+    <script src="https://kit.fontawesome.com/2513cc7a7b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="index.html">T5 <span>store</span></a>
+            </div>
+            <a href="index.html" class="home-icon" title="Home">
+                <i class="fa fa-home" style="font-size:32px;vertical-align:middle;"></i>
+            </a>
+        </nav>
+    </header>
+
+    <main class="auth-wrapper">
+        <div class="content">
+            <h2 id="title">Login</h2>
+            <form action="index.html" method="post" id="login">
+                <input type="email" id="lEmail" placeholder="email" required />
+                <input type="password" id="lPassword" placeholder="password" required />
+                <button type="submit">Login</button>
+                <p>
+                    Don't have an account?
+                    <span onclick="showRegister()"> Register </span>
+                </p>
+            </form>
+            <form action="" id="register" method="post" style="display: none">
+                <input type="text" id="username" placeholder="full name" />
+                <input type="email" id="email" placeholder="email" />
+                <input type="text" id="phone" placeholder="phone number" />
+                <input type="password" id="password" placeholder="password" />
+                <input type="password" id="confirmPassword" placeholder="confirm password" />
+
+                <button type="submit">Register</button>
+                <p id="message"></p>
+                <p>
+                    already have an account?
+                    <span onclick="showLogin()"> Login</span>
+                </p>
+            </form>
+        </div>
+    </main>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/sign-up.js"></script>
+</body>
+
+</html>
