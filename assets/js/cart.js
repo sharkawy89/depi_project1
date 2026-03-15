@@ -68,7 +68,7 @@ window.addEventListener('load', () => {
                 </div>
                 <div class="cart-actions">
                     <a href="index.html" class="continue-shopping-link">Continue Shopping</a>
-                    <button class="checkout-button" onclick="window.location.href='checkout.html?id=${cartIds}'">Proceed to Checkout</button>
+                    <button class="checkout-button" onclick="handleCheckout()">Proceed to Checkout</button>
                 </div>
             </div>`;
 
@@ -213,4 +213,31 @@ function updateCartTotal() {
 
 
 
+// checkout require login functionality
 
+function handleCheckout() {
+
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn) {
+
+        window.location.href = 'checkout.html';
+
+
+    } else {
+        Swal.fire({
+            title: 'Please Login',
+            text: 'You need to login first to complete your purchase.',
+            icon: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Login Now',
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'login-signup.html';
+            }
+
+        });
+    }
+};

@@ -66,6 +66,7 @@ loginForm.addEventListener("submit", function (e) {
 	}
 
 	setLoginMessage("Login successful", false);
+	localStorage.setItem("isLoggedIn", "true");
 	setTimeout(function () {
 		window.location.href = "index.html";
 	}, 500);
