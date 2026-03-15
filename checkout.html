@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - T5 Store</title>
+
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
+
+    <script src="https://kit.fontawesome.com/2513cc7a7b.js"></script>
+
+</head>
+
+<body>
+    <!-- start of navbar -->
+    <header class="header">
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="index.html">T5 store</a>
+            </div>
+            <div class="icons">
+                <div class="login-icon">
+                    <a href="login-signup.html"><i class="fa-solid fa-user" title="login"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end of navbar -->
+    <!-- start of items section -->
+    <div class="cart-container">
+
+        <div class="cart-header">
+            <h1>Checkout</h1>
+            <p>Review your order</p>
+        </div>
+
+        <div class="cart-items-section">
+            <div id="checkout-items" class="cart-items"></div>
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total-section">
+                <div class="total-label">Total:</div>
+                <div class="total-amount" id="checkout-total">$0</div>
+            </div>
+            <!-- end of items section -->
+            <!-- start of checkout form -->
+            <div class="checkout-form">
+
+                <h3>Shipping Information</h3>
+
+                <form id="checkout-form">
+
+                    <input type="text" id="name" placeholder="Full Name" required>
+
+                    <input type="text" id="address" placeholder="Address" required>
+
+                    <input type="text" id="phone" placeholder="Phone Number" required>
+
+                    <button type="submit" class="checkout-button">
+                        Place Order
+                    </button>
+
+                </form>
+
+            </div>
+            <!-- end of check out form  -->
+        </div>
+
+    </div>
+
+    <script src="assets/js/checkout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
