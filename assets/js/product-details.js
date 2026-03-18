@@ -46,7 +46,7 @@ window.addEventListener('load' , ()=>{
                             </div>
 
                             <div class= "Buttons">
-                            <button class= "add-to-cart">Add To Cart</button>
+                            <button class= "add-to-cart" pID= "${product[id].id}">Add To Cart</button>
                             </div>
 
 
@@ -64,4 +64,46 @@ window.addEventListener('load' , ()=>{
 
 }); // end of window load
 
+////////////////////////////////////////////
 
+document.addEventListener('click', (e) => {
+
+    const btn = e.target.closest('.add-to-cart');
+
+    if (btn) {
+        const productId = btn.getAttribute('pID'); 
+        saveToLocalStorage(productId);
+    }
+});
+
+function saveToLocalStorage(id) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (!cart.includes(id)) {
+        cart.push(id);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        // Success Toast
+        Swal.fire({
+            title: 'Added to Cart!',
+            text: 'Product successfully added to your shopping bag.',
+            icon: 'success',
+            toast: true,
+            position: 'bottom-right',
+            showConfirmButton: false,
+            timer: 2500,
+            timerProgressBar: true,
+            iconColor: '#28a745'
+        });
+    } else {
+        // already in cart Toast
+        Swal.fire({
+            title: 'Already in Cart',
+            text: 'This item is already in your shopping bag.',
+            icon: 'info',
+            toast: true,
+            position: 'bottom-right',
+            showConfirmButton: false,
+            timer: 2000
+        });
+    }
+}
