@@ -72,7 +72,7 @@ document.addEventListener('click', (e) => {
     const btn = e.target.closest('.btn-add-to-cart');
 
     if (btn) {
-        const productId = btn.getAttribute('data-id');
+        const productId = btn.getAttribute('data-id'); 
         saveToLocalStorage(productId);
     }
 });
